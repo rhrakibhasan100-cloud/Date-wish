@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Date Proposal</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(to bottom, #ffe4e1, #ffb6c1);
+}
+h1 { color:#d81b60; font-size:2.5rem; }
+p { font-size:1.2rem; color:#555; }
+input {
+    padding:10px; font-size:16px; border-radius:5px;
+    border:1px solid #ccc; width:250px;
+}
+.button {
+    display:inline-block; padding:10px 20px; margin:10px;
+    font-size:18px; border-radius:5px; cursor:pointer;
+    transition:transform .3s;
+}
+.button:hover { transform:scale(1.1); }
+.yes-button { background:#ff4081; color:white; border:none; }
+.no-button { background:#e0e0e0; color:gray; border:none; position:relative; }
+.section { display:none; animation:fadeIn .5s; }
+.option { margin:10px; display:inline-block; cursor:pointer; }
+.option img {
+    width:150px; height:100px; border-radius:10px;
+    transition:transform .3s;
+}
+.option img:hover { transform:scale(1.1); }
+.thank-you { font-size:24px; color:#d81b60; }
+
+@keyframes fadeIn {
+    from{opacity:0} to{opacity:1}
+}
+</style>
+</head>
+
+<body>
+
+<h1>Hi My Beloved One Elma ❤️</h1>
+<p>Will you go on a date with me? 😊</p>
+
+<div>
+<button class="button yes-button" id="yesButton">Yes 💖</button>
+<button class="button no-button" id="noButton">No 💔</button>
+</div>
+
+<!-- DATE -->
+<div class="section" id="dateSection">
+<h2>Pick a date in December 📅</h2>
+<input type="text" placeholder="Example: 18 December"><br>
+<button class="button yes-button" onclick="showPlaceChoice()">Next ➡️</button>
+</div>
+
+<!-- AREA -->
+<div class="section" id="placeChoice">
+<h2>Which area do you prefer? 💕</h2>
+<div class="option" onclick="showPlaceOptions()">Uttara</div>
+<div class="option" onclick="showPlaceOptions()">Nikunjo</div>
+</div>
+
+<!-- PLACE -->
+<div class="section" id="placeOptions">
+<h2>What would you like to go?</h2>
+<div class="option" onclick="showCafeOptions()">
+<img src="https://as1.ftcdn.net/v2/jpg/06/58/98/46/1000_F_658984640_WqnMrYmLOJBRMHHwGz8GdzfZJq8WNhhF.jpg">
+<p>Cafe</p>
+</div>
+<div class="option" onclick="showLakeInput()">
+<img src="https://image-worker.mindtrip.ai/image-resize/format=webp,w=720/https:/images.mindtrip.ai/attractions/1707/df5d/0c7a/16bd/a9ef/df2d/4abc/21d5">
+<p>Lake / Park</p>
+</div>
+<div class="option" onclick="showRestaurantOptions()">
+<img src="https://uploads.onecompiler.io/42zvn62qj/42zvn6zky/WhatsApp%20Image%202024-12-03%20at%2000.28.19.jpeg">
+<p>Restaurant</p>
+</div>
+</div>
+
+<!-- CAFE OPTIONS -->
+<div class="section" id="cafeOptions">
+<h2>What would you like in Cafe ☕</h2>
+<div class="option" onclick="showDessertOptions()">Coffee</div>
+<div class="option" onclick="showDessertOptions()">Pastry</div>
+<div class="option" onclick="showDessertOptions()">As your wish 💕</div>
+<button class="button no-button" onclick="backToPlaceOptions()">⬅️ Back</button>
+</div>
+
+<!-- LAKE INPUT -->
+<div class="section" id="lakeInput">
+<h2>Where do you want to go? 🌿</h2>
+<input type="text" placeholder="Your favourite place"><br>
+<button class="button yes-button" onclick="showDessertOptions()">Next ➡️</button>
+<button class="button no-button" onclick="backToPlaceOptions()">⬅️ Back</button>
+</div>
+
+<!-- RESTAURANT OPTIONS -->
+<div class="section" id="restaurantOptions">
+<h2>What would you like to eat 🍽️</h2>
+<div class="option" onclick="showDessertOptions()">Biryani</div>
+<div class="option" onclick="showDessertOptions()">Fried Rice</div>
+<div class="option" onclick="showDessertOptions()">Burger</div>
+<div class="option" onclick="showDessertOptions()">Pizza</div>
+<button class="button no-button" onclick="backToPlaceOptions()">⬅️ Back</button>
+</div>
+
+<!-- DESSERT -->
+<div class="section" id="dessertOptions">
+<h2>What dessert would you like?</h2>
+<div class="option" onclick="showIceCreamOptions()"> 
+    <img src= "https://previews.123rf.com/images/kireewongfoto/kireewongfoto1810/kireewongfoto181000041/111436075-variety-of-ice-cream-flavor-in-cones.jpg" >
+    <p>Ice Cream</p>
+</div>
+<div class="option" onclick="showJhalmuriOptions()">
+    <img src="https://images.slurrp.com/prodrich_article/o9dwgsvvbd.webp?impolicy=slurrp-20210601&width=880&height=500">
+    <p>Jhalmuri</p>
+</div>
+<div class="option" onclick="showFuchkaOptions()">        
+    <img src="https://openlab.macaulay.cuny.edu/nyfoodatlas/wp-content/uploads/sites/20/2025/05/pexels-photo-17184404-scaled-1.jpeg"> 
+    <p>Fuchka</p>
+</div>
+<button class="button no-button" onclick="backToPlaceOptions()">⬅️ Back</button>
+</div>
+
+<!-- ICE CREAM -->
+<div class="section" id="iceCreamOptions">
+<h2>Choose Ice Cream 🍨</h2>
+<div class="option" onclick="showThankYou()">Chocolate</div>
+<div class="option" onclick="showThankYou()">Vanilla</div>
+<div class="option" onclick="showThankYou()">Strawberry</div>
+<div class="option" onclick="showThankYou()">Mango</div>
+<button class="button no-button" onclick="backToDessertOptions()">⬅️ Back</button>
+</div>
+
+<!-- JHALMURI OPTIONS -->
+<div class="section" id="jhalmuriOptions">
+<h2>Jhalmuri Preference 🌶️</h2>
+<div class="option" onclick="showThankYou()">With Bombay Morich</div>
+<div class="option" onclick="showThankYou()">Without Bombay Morich</div>
+<button class="button no-button" onclick="backToDessertOptions()">⬅️ Back</button>
+</div>
+
+<!-- FUCHKA OPTIONS -->
+<div class="section" id="fuchkaOptions">
+<h2>Fuchka Type 🥟</h2>
+<div class="option" onclick="showThankYou()">Dhoi Fuchka</div>
+<div class="option" onclick="showThankYou()">Regular Fuchka</div>
+<button class="button no-button" onclick="backToDessertOptions()">⬅️ Back</button>
+</div>
+
+<!-- THANK YOU -->
+<div class="section thank-you" id="thankYouMessage">
+<p>Thank you, Elma 💖</p>
+<p>Looking forward to our date 🥰</p>
+</div>
+
+<script>
+const yesButton = document.getElementById("yesButton");
+const noButton = document.getElementById("noButton");
+
+const dateSection = document.getElementById("dateSection");
+const placeChoice = document.getElementById("placeChoice");
+const placeOptions = document.getElementById("placeOptions");
+const cafeOptions = document.getElementById("cafeOptions");
+const lakeInput = document.getElementById("lakeInput");
+const restaurantOptions = document.getElementById("restaurantOptions");
+const dessertOptions = document.getElementById("dessertOptions");
+const iceCreamOptions = document.getElementById("iceCreamOptions");
+const jhalmuriOptions = document.getElementById("jhalmuriOptions");
+const fuchkaOptions = document.getElementById("fuchkaOptions");
+const thankYouMessage = document.getElementById("thankYouMessage");
+
+yesButton.onclick = () => dateSection.style.display="block";
+noButton.onmouseover = () => {
+    noButton.style.left = Math.random()*100-50+"px";
+    noButton.style.top = Math.random()*50-25+"px";
+};
+
+function showPlaceChoice(){dateSection.style.display="none";placeChoice.style.display="block";}
+function showPlaceOptions(){placeChoice.style.display="none";placeOptions.style.display="block";}
+
+function showCafeOptions(){placeOptions.style.display="none";cafeOptions.style.display="block";}
+function showLakeInput(){placeOptions.style.display="none";lakeInput.style.display="block";}
+function showRestaurantOptions(){placeOptions.style.display="none";restaurantOptions.style.display="block";}
+
+function showDessertOptions(){
+cafeOptions.style.display="none";
+lakeInput.style.display="none";
+restaurantOptions.style.display="none";
+dessertOptions.style.display="block";
+}
+
+function showIceCreamOptions(){dessertOptions.style.display="none";iceCreamOptions.style.display="block";}
+function showJhalmuriOptions(){dessertOptions.style.display="none";jhalmuriOptions.style.display="block";}
+function showFuchkaOptions(){dessertOptions.style.display="none";fuchkaOptions.style.display="block";}
+
+function showThankYou(){
+iceCreamOptions.style.display="none";
+jhalmuriOptions.style.display="none";
+fuchkaOptions.style.display="none";
+thankYouMessage.style.display="block";
+}
+
+// BACK BUTTONS
+function backToPlaceOptions(){
+cafeOptions.style.display="none";
+lakeInput.style.display="none";
+restaurantOptions.style.display="none";
+dessertOptions.style.display="none";
+placeOptions.style.display="block";
+}
+
+function backToDessertOptions(){
+iceCreamOptions.style.display="none";
+jhalmuriOptions.style.display="none";
+fuchkaOptions.style.display="none";
+dessertOptions.style.display="block";
+}
+</script>
+
+</body>
+</html>
